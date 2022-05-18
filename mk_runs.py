@@ -11,12 +11,17 @@ project="linecheck"
 
 #        obsnums per source (make it negative if not added to the final combination)
 on = {}
-on['I10565'] = [98557, 98558]
-on['I12112'] = [98184, 98185, 98299, 98300, 98302, 98303,              
-                98422, 98423]
-on['I17208'] = []
+on['I10565'] = [94687, 94688,
+                95132, 95186, 95187, 95234, 95235, 98306, 98307,
+                98557, 98558]
 
-#        common parameters per source on the first dryrun (run1, run2)
+on['I12112'] = [94993, 94994, 95302, 95303,
+                98184, 98185, 98299, 98300, 98302, 98303,              
+                98422, 98423]
+on['I17208'] = [95306, 95307, 95524, 95525, 98594, 98595, 98649, 98650]
+
+
+#       common parameters per source on the first dryrun (run1, run2)
 pars1 = {}
 
 pars1['I10565'] = ""
@@ -25,9 +30,9 @@ pars1['I17208'] = ""
 
 #        common parameters per source on subsequent runs (run1a, run2a)
 pars2 = {}
-pars2['I10565'] = ""
-pars2['I12112'] = ""
-pars2['I17208'] = ""
+pars2['I10565'] = "admit=0"
+pars2['I12112'] = "admit=0"
+pars2['I17208'] = "admit=0"
 
 # below here no need to change code
 # ========================================================================
