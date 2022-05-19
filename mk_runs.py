@@ -2,7 +2,7 @@
 #
 #   script generator for project=
 #
-#
+#   lmtinfo.py grep LineCheck Bs
 
 import os
 import sys
