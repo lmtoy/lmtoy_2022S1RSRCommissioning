@@ -1,7 +1,7 @@
-#
 
 
-PID  = 2022S1RSRCommissioning
+
+PID  = 2022S1RSRCommissioning 2018S1RSRCommissioning 2018ARSRCommissioning#
 RUN1 = $(PID).run1
 RUN2 = $(PID).run2
 
