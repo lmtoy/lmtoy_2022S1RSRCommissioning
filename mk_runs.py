@@ -7,13 +7,19 @@
 import os
 import sys
 
+#  2022S1RSRCommissioning  2018S1RSRCommissioning 2018ARSRCommissioning
 project="linecheck"
 
 #        obsnums per source (make it negative if not added to the final combination)
 on = {}
 on['I10565'] = [94687, 94688,
                 95132, 95186, 95187, 95234, 95235, 98306, 98307,
-                98557, 98558]
+                98557, 98558,
+                99815, 99816, 99820, 99821, 99846, 99847, 99947, 99948, 100384, 100385]
+# 92068
+on['I10565a'] = [76707, 76708, 76829, 76830, 76988, 76989, 76991, 76992, 77008, 77009,
+                 77113, 77114, 77420, 77421, 
+                 92057, 92060, 92061, 92062, 92064, 92065, 92067, 92068]
 
 on['I12112'] = [94993, 94994, 95302, 95303,
                 98184, 98185, 98299, 98300, 98302, 98303,              
@@ -28,6 +34,7 @@ on['mwc349a'] = [98534, 98535, 100114, 100114, 101103, 101104, 101106, 101107]
 pars1 = {}
 
 pars1['I10565']  = ""
+pars1['I10565a']  = ""
 pars1['I12112']  = ""
 pars1['I17208']  = ""
 pars1['mwc349a'] = ""
@@ -35,6 +42,7 @@ pars1['mwc349a'] = ""
 #        common parameters per source on subsequent runs (run1a, run2a)
 pars2 = {}
 pars2['I10565']  = "admit=0"
+pars2['I10565a'] = "admit=0"
 pars2['I12112']  = "admit=0"
 pars2['I17208']  = "admit=0"
 pars2['mwc349a'] = "admit=0"
