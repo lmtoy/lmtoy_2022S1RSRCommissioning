@@ -35,21 +35,21 @@ on['mwc349a'] = [98534, 98535, 100114, 100114, 101103, 101104, 101106, 101107]
 #       common parameters per source on the first dryrun (run1, run2)
 pars1 = {}
 
-pars1['I10565']  = ""
-pars1['I10565a']  = ""
-pars1['I12112']  = ""
-pars1['I17208']  = ""
-pars1['I17208a']  = ""
-pars1['mwc349a'] = ""
+pars1['I10565']   = "xlines=110.51,0.15,108.65,0.3,85.2,0.4"
+pars1['I10565a']  = "xlines=110.51,0.15,108.65,0.3,85.2,0.4"
+pars1['I12112']   = "xlines=107.40,0.25"
+pars1['I17208']   = "xlines=110.50,0.20"
+pars1['I17208a']  = "xlines=110.50,0.20"
+pars1['mwc349a']  = ""
 
 #        common parameters per source on subsequent runs (run1a, run2a)
 pars2 = {}
-pars2['I10565']  = "admit=0"
-pars2['I10565a'] = "admit=0"
-pars2['I12112']  = "admit=0"
-pars2['I17208']  = "admit=0"
-pars2['I17208a']  = "admit=0"
-pars2['mwc349a'] = "admit=0"
+pars2['I10565']   = ""
+pars2['I10565a']  = ""
+pars2['I12112']   = ""
+pars2['I17208']   = ""
+pars2['I17208a']  = ""
+pars2['mwc349a']  = ""
 
 
 # below here no need to change code
