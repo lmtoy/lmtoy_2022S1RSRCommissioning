@@ -49,3 +49,11 @@ to run *everything* (historic data too).  And
       slurm_lmtoy.sh linecheck.run2
 	  
 to run the combinations.
+
+## current hack
+
+Since the RSR pipeline code is not parallel yet, this script needs to be run serially. For this a hack is needed:
+
+      sbatch_lmtoy.sh obsnum=1 bash `pwd`/linecheck.run1
+	  
+since we are faking obsnum=1, only one such script can be run.
