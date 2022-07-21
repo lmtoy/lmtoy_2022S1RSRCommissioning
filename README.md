@@ -56,4 +56,16 @@ Since the RSR pipeline code is not parallel yet, this script needs to be run ser
 
       sbatch_lmtoy.sh obsnum=1 bash `pwd`/linecheck.run1
 	  
-since we are faking obsnum=1, only one such script can be run.
+since we are faking obsnum=1, only one such script can be run.  As of Jul 19, 2022, the code can be run in parallel,
+and thus
+
+      sbatch_lmtoy.sh linecheck.run1
+
+can be used instead.
+
+
+## Historic data
+
+This script generator also has the historic (2018 in 50m, an 2014,15,16 with a 32m dish) added, but adding an 'a' to the source name.
+See also http://wiki.lmtgtm.org/lmtwiki/RSR%20Spectral%20Line%20Check and 
+http://wiki.lmtgtm.org/lmtwiki/RSR%20Spectral%20Line%20Check?action=AttachFile&do=view&target=LineCheckSources.pdf
