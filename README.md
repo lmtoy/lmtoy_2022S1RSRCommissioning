@@ -32,6 +32,13 @@ should give something like this
       2 bllac
       8 mwc349a
 
+According to http://wiki.lmtgtm.org/lmtwiki/RSR%20Spectral%20Line%20Check?action=AttachFile&do=view&target=LineCheckSources.pdf
+the fluxes of the sources we cover here are (for 32m dish)
+
+      I10565      68 mK
+      I17208      60 mK
+      I23365      16 mK
+
 
 # How to run
 
