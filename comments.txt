@@ -1,2 +1,11 @@
 #
-101100     bad chopper
+71588 50m feb/mar 2018
+74052 50m feb/mar 2018
+
+76707 50m may/jun 2018
+77421 50m may/jun 2018
+
+92057 50m mar 2020
+92068 50m mar 2020
+
+#101100     bad chopper
