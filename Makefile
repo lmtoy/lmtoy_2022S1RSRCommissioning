@@ -25,6 +25,11 @@ runs:
 	@echo "when this is done, RUN2 can be started"
 	@echo "----"
 
+#          maintain the needed symlinks of the comments.txt file
+comments:
+	@for p in $(PID); do \
+	(echo $$p &&  c=`pwd` &&  cd $(WORK_LMT)/$$p && rm -f comments.txt && ln -s $$c/comments.txt); \
+	done
 
 summary:
 	@for p in $(PID); do \
