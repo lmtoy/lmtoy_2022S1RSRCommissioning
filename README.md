@@ -85,16 +85,17 @@ from which you control the pipeline.   You first create the run scripts
 	  make runs
 	  
 This project is a bit peculiar in that it handles 3 sources (I10565, I17208, and I12112) 
-over more than this ProjectID: 2022S1RSRCommissioning and the other 5 historic ones! The
+over more than that single ProjectID 2022S1RSRCommissioning, there are 5 other historic ones! The
 data from those other projects will be rooted in another ProjectId, e.g.
-$WORK_LMT/2018S1RSRCommissioning.
+$WORK_LMT/2018S1RSRCommissioning and the oldest one $WORK_LMT/2014ARSRCommissioning.
 
 If you want to run the whole data from 2014-2022, you would do 
 
 	  sbatch_lmtoy.sh linecheck.run1
 
-but these are currently 317 obsnums, so will take a while.  Better is to focus on 
-for example the historic 50m data for one source, as a test. 
+but these are currently 317 obsnums, so will take a while for this example.
+Better is to focus on 
+for example the historic 50m data for one source.
 For convenience we've labeled historic 50m and 32m data by appending "h50" and "h32" to
 the source name. So, to test the historic 50m data for I10565 we do:
 
@@ -106,20 +107,24 @@ where you will see 33 obsnums in test1, and just a single combination of those 3
 These files are now ready for slurm:
 
 	  sbatch_lmtoy.sh test1
-	  
-when this is finished, issue
+ 
+This should take about 5 mins, but you keep checking with the 
+squeue command until all 33 jobs are done with this neat refresher (control-C to exit)
+
+      watch -n3 squeue -u lmthelpdesk_umass_edu
+
+When all is done, issue the run script to combine those 33 obsnums
 
       sbatch_lmtoy.sh test2
-	  
+	  watch -n3 squeue -u lmthelpdesk_umass_edu
 	  
 Before you can view them, we need to distribute the comments.txt file to the pipeline directory, so 
-the summary can view them. And then we make the summary:
+the summary can include them. And then we make the summary:
 
       make comments
 	  make summary
-	  	  
 	  
-and now you can view the pipeline summary here
+after which you can view the pipeline summary here
 
 * http://taps.lmtgtm.org/lmtslr/2018ARSRCommissioning/     covering obsnums 71588 - 74052, as well as the combination  71588_92068
 * http://taps.lmtgtm.org/lmtslr/2018S1RSRCommissioning/    covering obsnums 76707 - 92068
@@ -134,3 +139,7 @@ Once you run the other ones, you can view them in their respective summary URLs:
 * http://taps.lmtgtm.org/lmtslr/2016ARSRCommissioning/   (32m)
 * http://taps.lmtgtm.org/lmtslr/2022S1SRCommissioning/   new 2022 data
 
+
+For the helpdesk accounts, the root directory would be something like
+
+* http://taps.lmtgtm.org/lmthelpdesk/peter/2018ARSRCommissioning
