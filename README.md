@@ -42,23 +42,6 @@ the fluxes of the sources we cover here are (for 32m dish)
       I23365      16 mK
 
 
-# How to run
-
-Normally the command
-     
-     ./mk_runs.py
-	 
-generates the text file for slurm, but currently RSR cannot run in parallel. But when it does,
-this will be the command
-
-      slurm_lmtoy.sh linecheck.run1
-
-to run *everything* (historic data too).  And
-
-      slurm_lmtoy.sh linecheck.run2
-	  
-to run the combinations.
-
 
 ## Historic data
 
@@ -67,58 +50,6 @@ See also http://wiki.lmtgtm.org/lmtwiki/RSR%20Spectral%20Line%20Check and
 http://wiki.lmtgtm.org/lmtwiki/RSR%20Spectral%20Line%20Check?action=AttachFile&do=view&target=LineCheckSources.pdf
 
 
-# Example Session: Historic 50m data
-
-Typically if you start with a new project, you first make the project directory, in this case
-
-      cd $WORK_LMT
-	  mkdir 2022S1RSRCommissioning
-	  cd 2022S1RSRCommissioning
-	 
-then you grab the script generator infrastructure
-
-      git clone https://github.com/teuben/lmtoy_2022S1RSRCommissioning
-	  cd lmtoy_2022S1RSRCommissioning
-	  
-from which you control the pipeline.   You first create the run scripts
-
-	  make runs
-	  
-This project is a bit peculiar in that it handles 3 sources (I10565, I17208, and I12112) 
-over more than that single ProjectID 2022S1RSRCommissioning, there are 5 other historic ones! The
-data from those other projects will be rooted in another ProjectId, e.g.
-$WORK_LMT/2018S1RSRCommissioning and the oldest one $WORK_LMT/2014ARSRCommissioning.
-
-If you want to run the whole data from 2014-2022, you would do 
-
-	  sbatch_lmtoy.sh linecheck.run1
-
-but these are currently 317 obsnums, so will take a while for this example.
-Better is to focus on 
-for example the historic 50m data for one source.
-For convenience we've labeled historic 50m and 32m data by appending "h50" and "h32" to
-the source name. So, to test the historic 50m data for I10565 we do:
-
-
-      grep I10565h50 linecheck.run1 > test1
-      grep I10565h50 linecheck.run2 > test2
-	  
-where you will see 33 obsnums in test1, and just a single combination of those 33 in test2.
-These files are now ready for slurm:
-
-	  sbatch_lmtoy.sh test1
- 
-This should take about 5 mins, but you keep checking with the 
-squeue command until all 33 jobs are done with this neat refresher (control-C to exit)
-
-      watch -n3 squeue -u lmthelpdesk_umass_edu
-
-When all is done, issue the run script to combine those 33 obsnums
-
-      sbatch_lmtoy.sh test2
-	  watch -n3 squeue -u lmthelpdesk_umass_edu
-	  
-Before you can view them, we need to distribute the comments.txt file to the pipeline directory, so 
 the summary can include them. And then we make the summary:
 
       make comments
